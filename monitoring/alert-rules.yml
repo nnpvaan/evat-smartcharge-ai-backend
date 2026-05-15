@@ -1,0 +1,29 @@
+groups:
+  - name: evat-smartcharge-alerts
+    rules:
+      - alert: EVATApplicationDown
+        expr: up{job="evat-smartcharge-ai"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "EVAT SmartCharge AI is down"
+          description: "The production EVAT SmartCharge AI backend service is not responding."
+
+      - alert: EVATHighRequestLatency
+        expr: histogram_quantile(0.95, rate(evat_request_latency_seconds_bucket[2m])) > 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High API latency detected"
+          description: "The 95th percentile API latency is above 1 second."
+
+      - alert: EVATNoTraffic
+        expr: rate(evat_request_total[5m]) == 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "No application traffic detected"
+          description: "No API requests have been recorded in the last 5 minutes."

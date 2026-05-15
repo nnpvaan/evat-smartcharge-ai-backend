@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+security-venv/
+.env
+
+# Test and coverage reports
+.coverage
+htmlcov/
+.pytest_cache/
+reports/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Jenkins / Docker local
+*.log
