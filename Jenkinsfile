@@ -17,6 +17,8 @@ pipeline {
     }
 
     environment {
+        PATH = "/usr/local/bin:/opt/homebrew/bin:/Applications/Docker.app/Contents/Resources/bin:${env.PATH}"
+
         APP_NAME = 'evat-smartcharge-ai-backend'
         IMAGE_NAME = "${APP_NAME}"
 
