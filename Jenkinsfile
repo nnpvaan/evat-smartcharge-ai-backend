@@ -25,8 +25,8 @@ pipeline {
         STAGING_COMPOSE = 'docker-compose.staging.yml'
         PROD_COMPOSE = 'docker-compose.prod.yml'
 
-        SONAR_PROJECT_KEY = 'YOUR_SONARCLOUD_PROJECT_KEY'
-        SONAR_ORGANIZATION = 'YOUR_SONARCLOUD_ORGANIZATION'
+        SONAR_PROJECT_KEY = 'nnpvaan_evat-smartcharge-ai-backend'
+        SONAR_ORGANIZATION = 'nnpvaan'
         SONAR_HOST_URL = 'https://sonarcloud.io'
     }
 
